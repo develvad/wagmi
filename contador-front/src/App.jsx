@@ -13,8 +13,8 @@ function App() {
   const { config: contractConfigUp } = usePrepareContractWrite({ enabled: false, address: contractAddress, abi: contractAbi, functionName: 'upCounter'});
   const { config: contractConfigDown } = usePrepareContractWrite({enabled: false, address: contractAddress, abi: contractAbi, functionName: 'downCounter'});
   // Write Contract
-  const { data: dataUp, write: upCounterH } = useContractWrite(contractConfigUp);
-  const { data: dataDown, write: downCounterH } = useContractWrite(contractConfigDown);
+  const { data: dataUp, write: upCounter } = useContractWrite(contractConfigUp);
+  const { data: dataDown, write: downCounter } = useContractWrite(contractConfigDown);
   // Other Hooks
   let [counter, setCounter] = useState();
   let [enabled, setEnabled] = useState(false);
@@ -46,8 +46,8 @@ function App() {
         <button onClick={() => disconnect()}> Desconectar Wallet </button>
         <h3> Valor del contador: <span style={{fontSize: '28px'}}> { counter } </span> </h3>
         <p><button onClick={() => setEnabled(true)}> Actualizar Contador </button> </p>
-        <p><button onClick={() => upCounterH()}> Aumentar Contador </button> </p>
-        <p><button onClick={() => downCounterH()} > Disminuir Contador </button> </p>
+        <p><button onClick={() => upCounter()}> Aumentar Contador </button> </p>
+        <p><button onClick={() => downCounter()} > Disminuir Contador </button> </p>
       </>
     )
   }
