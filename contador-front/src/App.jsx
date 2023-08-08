@@ -10,8 +10,8 @@ function App() {
   const contractAddress = "0xa34a3D4E8D924Db2678246C5125e27EFC0f4Df27";
   const contractAbi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"downCounter","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"getCounter","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"setCounterToZero","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"upCounter","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}];
   // Write Contract Prepare
-  const { config: contractConfigUp } = usePrepareContractWrite({ enabled: false, address: contractAddress, abi: contractAbi, functionName: 'upCounter'});
-  const { config: contractConfigDown } = usePrepareContractWrite({enabled: false, address: contractAddress, abi: contractAbi, functionName: 'downCounter'});
+  const { config: contractConfigUp } = usePrepareContractWrite({ address: contractAddress, abi: contractAbi, functionName: 'upCounter'});
+  const { config: contractConfigDown } = usePrepareContractWrite({address: contractAddress, abi: contractAbi, functionName: 'downCounter'});
   // Write Contract
   const { data: dataUp, write: upCounter } = useContractWrite(contractConfigUp);
   const { data: dataDown, write: downCounter } = useContractWrite(contractConfigDown);
