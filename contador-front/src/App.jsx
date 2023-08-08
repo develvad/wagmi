@@ -33,6 +33,9 @@ function App() {
       console.log("Enviado! ", data, typeof(data), data.toString());
       setCounter(data.toString())
       setEnabled(false);
+      console.log("...................");
+      console.log(upCounter);
+
     },
     onError(e) {
       console.error('Error -> ', e);
