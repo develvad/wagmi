@@ -10,7 +10,7 @@ import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [sepolia], 
-  [alchemyProvider({ apiKey: '74EPBaQbXtY_0eX69aMXT9mPtrvoYZWG'})]
+  [alchemyProvider({ apiKey: import.meta.env.VITE_INFURA_API})]
 );
 
 const configWagm = createConfig({
